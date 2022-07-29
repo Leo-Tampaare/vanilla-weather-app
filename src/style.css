@@ -1,3 +1,5 @@
-h1 {
-  color: rgb(77, 187, 187);
+.container {
+  margin: 0 auto;
+  border: 1px solid #000;
+  padding: 20px;
 }
