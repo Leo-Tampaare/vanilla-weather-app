@@ -1,6 +1,12 @@
 .container {
   font-family: "Montserrat", sans-serif;
 }
+
+.wrapper {
+  max-width: 696px;
+  margin: 0 auto;
+}
+
 .weather {
   background: linear-gradient(
     158deg,
@@ -14,7 +20,6 @@
   box-shadow: 10px 10px 15px rgb(138, 138, 151);
   padding: 20px 30px 30px;
   min-width: 540px;
-  max-width: 696px;
 }
 
 .city-search {
@@ -34,14 +39,13 @@
 .form-search,
 .form-search:focus {
   width: 70%;
-  outline-width: 2px;
-  outline-color: rgb(121, 121, 121);
+  outline: none;
   background: rgba(255, 255, 255, 0.301);
 }
 
 .form-submit {
   width: 20%;
-  background: rgb(175, 175, 175);
+  background: rgb(178, 177, 185);
   transition: all 150ms ease-in-out;
 }
 
@@ -71,4 +75,14 @@
 .unit {
   position: relative;
   top: -40px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+small {
+  text-align: center;
+  font-size: 15px;
 }
