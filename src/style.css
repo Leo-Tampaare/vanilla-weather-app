@@ -1,5 +1,19 @@
 .container {
+  font-family: "Montserrat", sans-serif;
+}
+.weather {
   margin: 0 auto;
   border: 1px solid #000;
   padding: 20px;
+  min-width: 540px;
+  max-width: 696px;
+}
+
+.city-search {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-search {
+  width: 70%;
 }
