@@ -16,7 +16,7 @@
   );
   margin: 20px auto;
   border: 1px solid #000;
-  border-radius: 7px;
+  border-radius: 15px;
   box-shadow: 10px 10px 15px rgb(138, 138, 151);
   padding: 20px 30px 30px;
   min-width: 540px;
@@ -32,8 +32,8 @@
 .form-submit {
   border: 1px solid rgb(59, 59, 59);
   padding: 7px 15px;
-  box-shadow: 5px 5px 7px rgba(178, 178, 185, 0.87);
-  border-radius: 10px;
+  box-shadow: 5px 5px 7px rgba(141, 141, 163, 0.87);
+  border-radius: 20px;
 }
 
 .form-search,
@@ -44,17 +44,21 @@
 }
 
 .form-submit {
-  width: 20%;
-  background: rgb(178, 177, 185);
+  width: 25%;
+  color: white;
+  border: 1px solid #774f8a;
+  background: #774f8a;
   transition: all 150ms ease-in-out;
 }
 
 .form-submit:hover {
-  background: rgba(175, 175, 175, 0.212);
+  background: #54626db9;
 }
 
 .city {
   font-size: 32px;
+  font-weight: 500;
+  color: #774f8a;
   text-transform: capitalize;
 }
 
@@ -68,11 +72,14 @@
   font-size: 64px;
 }
 
+.icon {
+  padding: 0 20px;
+}
 .temperature {
-  padding-left: 20px;
+  font-weight: 500;
 }
 
-.unit {
+.units {
   position: relative;
   top: -40px;
 }
@@ -82,7 +89,17 @@ ul {
   padding-left: 0;
 }
 
+.value {
+  color: #774f8a;
+  font-weight: 500;
+}
+
 small {
   text-align: center;
   font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #aa6cc7;
 }
