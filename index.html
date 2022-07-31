@@ -31,8 +31,14 @@
     <div class="container">
       <div class="wrapper">
         <div class="weather">
-          <form class="city-search">
-            <input class="form-search" type="text" placeholder="Enter a city" />
+          <form class="city-search" id="search-form">
+            <input
+              class="form-search"
+              type="text"
+              placeholder="Enter a city"
+              autocomplete="off"
+              id="search"
+            />
             <input class="form-submit" type="submit" value="Search" />
           </form>
           <div class="city" id="city"></div>
