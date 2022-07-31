@@ -34,6 +34,8 @@ function showWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
 
+  celsiusTemperature = response.data.main.temp;
+
   cityElement.innerHTML = response.data.name;
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -41,9 +43,28 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+  tempElement.innerHTML = Math.round(celsiusTemperature);
   humidityElement.innerHTML = `${response.data.main.humidity}%`;
   windElement.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
+}
+
+function changeToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(fahrenheitTemperature);
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function changeToCelsius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
 }
 
 function citySearch(city) {
@@ -60,7 +81,15 @@ function citySubmit(event) {
   citySearch(cityInputElement.value);
 }
 
-citySearch("London");
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeToCelsius);
+
+citySearch("London");

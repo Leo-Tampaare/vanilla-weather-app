@@ -88,6 +88,11 @@
   top: -40px;
 }
 
+.units .active {
+  color: #212529;
+  cursor: default;
+}
+
 ul {
   list-style: none;
   padding-left: 0;
