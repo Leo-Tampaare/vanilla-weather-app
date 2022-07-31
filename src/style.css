@@ -15,9 +15,9 @@
     rgba(183, 196, 207, 1) 100%
   );
   margin: 20px auto;
-  border: 1px solid #000;
+  border: 1px solid #8d98a1;
   border-radius: 15px;
-  box-shadow: 10px 10px 15px rgb(138, 138, 151);
+  box-shadow: 10px 10px 15px #a39492f1;
   padding: 20px 30px 30px;
   min-width: 540px;
 }
@@ -30,7 +30,6 @@
 
 .form-search,
 .form-submit {
-  border: 1px solid rgb(59, 59, 59);
   padding: 7px 20px;
   box-shadow: 5px 5px 7px #a39492f1;
   border-radius: 20px;
@@ -38,6 +37,7 @@
 
 .form-search,
 .form-search:focus {
+  border: 1px solid #8d98a1;
   width: 70%;
   outline: none;
   background: rgba(255, 255, 255, 0.301);
