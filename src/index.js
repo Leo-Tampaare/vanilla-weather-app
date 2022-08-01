@@ -25,6 +25,31 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastHTML = ``;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 day-column">
+              <span>${day}</span>
+              <img
+                src="http://openweathermap.org/img/wn/04d@2x.png"
+                alt=""
+                width="80"
+              />
+              <span class="value">
+                <strong><span>17°</span></strong>
+                <span>12°</span>
+              </span>
+            </div>`;
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+
 function showWeather(response) {
   let cityElement = document.querySelector("#city");
   let dateElement = document.querySelector("#date");
@@ -93,3 +118,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", changeToCelsius);
 
 citySearch("London");
+displayForecast();
