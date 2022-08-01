@@ -46,14 +46,14 @@
 .form-submit {
   width: 25%;
   color: white;
-  border: 1px solid #944238;
-  background: #944238;
+  border: 1px solid #ec6e4c;
+  background: #ec6e4c;
   transition: all 150ms ease-in-out;
 }
 
 .form-submit:hover {
-  background: #ec6e4c;
-  border: 1px solid #ec6e4c;
+  background: #944238;
+  border: 1px solid #944238;
 }
 
 .city {
@@ -115,4 +115,14 @@ a {
 
 a:hover {
   color: #944238;
+}
+
+hr {
+  margin: 0;
+}
+
+.weather-forecast {
+  text-align: center;
+  justify-content: space-around;
+  margin-top: 25px;
 }
