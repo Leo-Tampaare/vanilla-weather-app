@@ -1,3 +1,8 @@
+body {
+  background-image: url(background.jpg);
+  background-size: 100%;
+}
+
 .container {
   font-family: "Montserrat", sans-serif;
 }
@@ -10,15 +15,15 @@
 .weather {
   background: linear-gradient(
     163deg,
-    rgba(239, 244, 244, 1) 0%,
-    rgba(229, 229, 237, 1) 31%,
-    rgba(202, 202, 218, 1) 60%,
-    rgba(177, 178, 199, 1) 100%
+    rgba(239, 244, 244, 0.8) 0%,
+    rgba(229, 229, 237, 0.8) 31%,
+    rgba(185, 185, 204, 0.8) 60%,
+    rgba(156, 157, 180, 0.8) 100%
   );
   margin: 20px auto;
   border: 1px solid #8d98a1;
   border-radius: 15px;
-  box-shadow: 10px 10px 15px #a39492f1;
+  box-shadow: 10px 10px 15px #857573f1;
   padding: 20px 30px 30px;
   min-width: 696px;
 }
