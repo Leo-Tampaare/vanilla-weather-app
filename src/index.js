@@ -65,7 +65,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coords) {
-  let apiKey = "349d90e7a285f14e8d2236c5925edbde";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=${tempUnit}`;
 
   axios.get(apiUrl).then(displayForecast);
@@ -121,8 +120,16 @@ function changeToCelsius(event) {
 }
 
 function citySearch(city) {
-  let apiKey = "349d90e7a285f14e8d2236c5925edbde";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${tempUnit}`;
+
+  axios.get(apiUrl).then(showWeather);
+}
+
+function getGeoApi(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${tempUnit}`;
 
   axios.get(apiUrl).then(showWeather);
 }
@@ -134,11 +141,19 @@ function citySubmit(event) {
   citySearch(cityInputElement.value);
 }
 
+function currentGeo() {
+  navigator.geolocation.getCurrentPosition(getGeoApi);
+}
+
+let apiKey = "349d90e7a285f14e8d2236c5925edbde";
 let celsiusTemperature = null;
 let tempUnit = "metric";
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", citySubmit);
+
+let locationButton = document.querySelector("#location-button");
+locationButton.addEventListener("click", currentGeo);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
